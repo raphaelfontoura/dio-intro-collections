@@ -16,14 +16,16 @@ public class ListHomeWork1 {
     public static void main(String[] args) {
 
         List<Double> temperatureList = new ArrayList<>();
-
+        var sum = 0d;
         try (Scanner scan = new Scanner(System.in)) {
             for (int i = 1; i <= 6; i++) {
                 System.out.printf("Digite a temperatura do mês %d: ", i);
-                temperatureList.add(scan.nextDouble());
+                var temperature = scan.nextDouble();
+                temperatureList.add(temperature);
+                sum += temperature;
             }
 
-            Double mean = sumList(temperatureList) / temperatureList.size();
+            Double mean = sum / temperatureList.size();
 
             System.out.printf("A temperatura média do semestre foi: %.2f. \n", mean);
             System.out.println("Meses com temperatura acima da média: ");
@@ -49,14 +51,6 @@ public class ListHomeWork1 {
             }
         }
         return resultList;
-    }
-
-    private static Double sumList(List<Double> temperatureList) {
-        Double sum = 0d;
-        for (int i = 0; i < temperatureList.size(); i++) {
-            sum += temperatureList.get(i);
-        }
-        return sum;
     }
 
 }
