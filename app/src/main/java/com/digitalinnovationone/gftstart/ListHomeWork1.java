@@ -14,14 +14,13 @@ public class ListHomeWork1 {
             "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"));
 
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
 
         List<Double> temperatureList = new ArrayList<>();
 
         try (Scanner scan = new Scanner(System.in)) {
             for (int i = 1; i <= 6; i++) {
                 System.out.printf("Digite a temperatura do mês %d: ", i);
-                temperatureList.add(input.nextDouble());
+                temperatureList.add(scan.nextDouble());
             }
 
             Double mean = sumList(temperatureList) / temperatureList.size();
