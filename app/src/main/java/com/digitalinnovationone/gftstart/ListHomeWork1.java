@@ -17,17 +17,24 @@ public class ListHomeWork1 {
         Scanner input = new Scanner(System.in);
 
         List<Double> temperatureList = new ArrayList<>();
-        for (int i = 1; i <= 6; i++) {
-            System.out.printf("Digite a temperatura do mês %d: ", i);
-            temperatureList.add(input.nextDouble());
+
+        try (Scanner scan = new Scanner(System.in)) {
+            for (int i = 1; i <= 6; i++) {
+                System.out.printf("Digite a temperatura do mês %d: ", i);
+                temperatureList.add(input.nextDouble());
+            }
+
+            Double mean = sumList(temperatureList) / temperatureList.size();
+
+            System.out.printf("A temperatura média do semestre foi: %.2f. \n", mean);
+            System.out.println("Meses com temperatura acima da média: ");
+            var result = getMonths(temperatureList, mean);
+            result.forEach(System.out::println);
+
+        } catch (Exception e) {
+            System.err.println("Erro ao processar a entrada da temperatura");
+            System.out.println(e);
         }
-
-        Double mean = sumList(temperatureList) / temperatureList.size();
-
-        System.out.printf("A temperatura média do semestre foi: %.2f. \n", mean);
-        System.out.println("Meses com maior temperatura: ");
-        var result = getMonths(temperatureList, mean);
-        result.forEach(System.out::println);
 
     }
 
