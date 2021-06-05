@@ -1,11 +1,7 @@
 package com.digitalinnovationone.gftstart;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -29,8 +25,6 @@ public class ListHomeWork1 {
         Double mean = sumList(temperatureList) / temperatureList.size();
 
         System.out.printf("A temperatura média do semestre foi: %.2f. \n", mean);
-        // Collections.sort(temperatureList, Collections.reverseOrder());
-        // System.out.println(temperatureList);
         System.out.println("Meses com maior temperatura: ");
         var result = getMonths(temperatureList, mean);
         result.forEach(System.out::println);
