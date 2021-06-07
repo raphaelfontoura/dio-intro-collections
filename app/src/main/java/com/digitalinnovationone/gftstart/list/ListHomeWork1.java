@@ -1,4 +1,4 @@
-package com.digitalinnovationone.gftstart;
+package com.digitalinnovationone.gftstart.list;
 
 import java.util.ArrayList;
 import java.util.Arrays;
