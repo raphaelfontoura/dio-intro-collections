@@ -1,14 +1,9 @@
 package com.digitalinnovationone.gftstart.set;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.List;
 import java.util.Set;
-import java.util.SortedSet;
 import java.util.TreeSet;
 
 /**
@@ -17,8 +12,9 @@ import java.util.TreeSet;
 public class SetHomeWork1 {
 
     public static void main(String[] args) {
-        Set<String> arcoIris = new HashSet<>(Arrays.asList("violeta", "anil", "azul", "verde", "amarelo", "laranja", "vermelho"));
-        
+        Set<String> arcoIris = new HashSet<>(
+                Arrays.asList("violeta", "anil", "azul", "verde", "amarelo", "laranja", "vermelho"));
+
         for (String cor : arcoIris) {
             System.out.println(cor);
         }
@@ -37,7 +33,7 @@ public class SetHomeWork1 {
         System.out.println(arcoIrisReverse);
 
         var iterator = arcoIris.iterator();
-        while (iterator.hasNext()){
+        while (iterator.hasNext()) {
             var cor = iterator.next();
             if (cor.substring(0, 1).equalsIgnoreCase("v")) {
                 System.out.println(cor);
