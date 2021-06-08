@@ -66,6 +66,9 @@ public class MapHomeWork1 {
         System.out.println("Total de população dos estados: " + nf.format(total2));
 
         System.out.println("Média de população dos estados: " + total/states.size());
+        states.values().stream().mapToInt(Integer::intValue)
+            .average()
+            .ifPresent(System.out::println);
 
 
         System.out.println("Retirar estados com população menor que 4.000.000");
