@@ -24,20 +24,17 @@ public class SetHomeWork2 {
         favoritesOrderByName.forEach(System.out::println);
 
         System.out.println("Ordenadas por IDE:");
-        var compareLanguageByIDE = Comparator.comparing(LanguageProgramming::getIde);
-        Set<LanguageProgramming> languagesByIDE = new TreeSet<>(compareLanguageByIDE);
+        Set<LanguageProgramming> languagesByIDE = new TreeSet<>(Comparator.comparing(LanguageProgramming::getIde));
         languagesByIDE.addAll(favoritesLanguages);
         languagesByIDE.forEach(System.out::println);
 
         System.out.println("Ordenadas por Ano e nome:");
-        var compareLanguageByYearName = new CompareLanguageByYearAndName();
-        Set<LanguageProgramming> languagesByYearName = new TreeSet<>(compareLanguageByYearName);
+        Set<LanguageProgramming> languagesByYearName = new TreeSet<>(new CompareLanguageByYearAndName());
         languagesByYearName.addAll(favoritesLanguages);
         languagesByYearName.forEach(System.out::println);
 
         System.out.println("Ordenadas por Nome, ano e IDE");
-        var compareAll = new CompareLanguageByNameYearIDE();
-        Set<LanguageProgramming> languagesByAll = new TreeSet<>(compareAll);
+        Set<LanguageProgramming> languagesByAll = new TreeSet<>(new CompareLanguageByNameYearIDE());
         languagesByAll.addAll(favoritesLanguages);
         languagesByAll.forEach(System.out::println);
 
